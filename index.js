@@ -6,6 +6,15 @@ var stew = require('broccoli-stew');
 
 module.exports = {
   name: 'ember-bootstrap-4',
+	options: {
+		nodeAssets: {
+			'popper.js': {
+				srcDir: 'dist/umd',
+				import: ['popper.js'],
+				vendor: ['popper.js.map']
+			}
+		}
+	},
   treeForStyles: function() {
     return stew.mv(bootstrapAssetPath('scss'), '.');
   },
