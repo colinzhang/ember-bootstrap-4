@@ -9,9 +9,11 @@ module.exports = {
 	options: {
 		nodeAssets: {
 			'popper.js': {
-				srcDir: 'dist/umd',
-				import: ['popper.js'],
-				vendor: ['popper.js.map']
+				vendor: {
+					srcDir: 'dist/umd',
+					destDir: 'popper',
+					import: ['popper.js', 'popper.js.map'],
+				}
 			}
 		}
 	},
@@ -23,7 +25,7 @@ module.exports = {
     return stew.mv(bootstrapAssetPath('dist/js'), 'bootstrap');
   },
   included: function(app) {
-      app.import('vendor/popper/umd/popper.js');
+      app.import('vendor/popper/popper.js');
       var plugins = (app.options.bootstrap || {}).plugins;
       if (Array.isArray(plugins)) {
         plugins.forEach(function(name) {
