@@ -10,10 +10,11 @@ module.exports = {
     return stew.mv(bootstrapAssetPath('scss'), '.');
   },
   treeForVendor: function() {
+    stew.mv(popperAssetPath('dist', 'popper');
     return stew.mv(bootstrapAssetPath('dist/js'), 'bootstrap');
   },
   included: function(app) {
-      app.import('bower_components/tether/dist/js/tether.js');
+      app.import('vendor/popper/umd/popper.js');
       var plugins = (app.options.bootstrap || {}).plugins;
       if (Array.isArray(plugins)) {
         plugins.forEach(function(name) {
@@ -28,4 +29,9 @@ module.exports = {
 function bootstrapAssetPath(which) {
   var bootstrapPath = require.resolve('bootstrap');
   return path.join(path.dirname(bootstrapPath), '../..', which);
+}
+
+function popperAssetPath(which) {
+  var popperPath = require.resolve('popper.js');
+  return path.join(path.dirname(popperPath), '../..', which);
 }
