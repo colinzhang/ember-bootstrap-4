@@ -37,7 +37,8 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^2.0.0",
     "ember-try": "^0.0.8",
-    "jquery": "^3.2.1"
+    "jquery": ">=3.0.0",
+    "popper.js": "^1.11.0"
   },
   "keywords": [
     "ember-addon"
