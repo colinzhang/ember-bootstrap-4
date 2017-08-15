@@ -10,7 +10,7 @@ module.exports = {
     return stew.mv(bootstrapAssetPath('scss'), '.');
   },
   treeForVendor: function() {
-    stew.mv(popperAssetPath('dist', 'popper');
+    stew.mv(popperAssetPath('dist'), 'popper');
     return stew.mv(bootstrapAssetPath('dist/js'), 'bootstrap');
   },
   included: function(app) {
